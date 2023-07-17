@@ -1,0 +1,20 @@
+{
+    "globals": {},
+    "roots": ["<rootDir>/"],
+    "moduleNameMapper": {
+        "^@domain/(.*)$": "<rootDir>/domain/$1",
+        "^@infrastructure/(.*)$": "<rootDir>/infrastructure/$1",
+        "^@interfaces/(.*)$": "<rootDir>/interfaces/$1",
+        "^@usecase/(.*)$": "<rootDir>/usecase/$1"
+    },
+    "moduleDirectories": [
+        "src",
+        "node_modules"
+    ],
+    "moduleFileExtensions": [
+        "js",
+        "ts"
+    ],
+    "preset": "ts-jest",
+    "testEnvironment": "node"
+}

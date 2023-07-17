@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  db:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - DB_LANG=ja_JP
+    container_name: "db"
+    environment:
+      - POSTGRES_USER
+      - POSTGRES_PASSWORD
+    ports:
+      - "5432:5432"
+    restart: always
+    volumes:
+      - /home/containers/postgresql:/var/lib/postgresql
