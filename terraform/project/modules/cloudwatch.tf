@@ -51,7 +51,7 @@ resource "aws_scheduler_schedule" "xxx_schedule_trigger" {
 
   target {
     arn      = aws_lambda_function.xxx_schedule_trigger.arn
-    role_arn = aws_iam_role.call_cases_for_event_bridge_scheduler.arn
+    role_arn = aws_iam_role.xxx_schedule_for_event_bridge_scheduler.arn
   }
 }
 

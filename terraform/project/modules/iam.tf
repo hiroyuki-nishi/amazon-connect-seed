@@ -205,12 +205,12 @@ resource "aws_iam_role_policy_attachment" "xxx_schedule_trigger_put_log_group" {
   policy_arn = aws_iam_policy.xxx_schedule_trigger_put_log_group_policy.arn
 }
 
-resource "aws_iam_role" "call_cases_for_event_bridge_scheduler" {
+resource "aws_iam_role" "xxx_schedule_for_event_bridge_scheduler" {
   name               = "${var.prefix}-${var.project_name}-${var.env}-xxx_for_firehose-for-eventbridge-scheduler"
-  assume_role_policy = data.aws_iam_policy_document.call_cases_event_bridge_scheduler_assume.json
+  assume_role_policy = data.aws_iam_policy_document.xxx_schedule_event_bridge_scheduler_assume.json
 }
 
-data "aws_iam_policy_document" "call_cases_event_bridge_scheduler_assume" {
+data "aws_iam_policy_document" "xxx_schedule_event_bridge_scheduler_assume" {
   statement {
     effect = "Allow"
 
@@ -229,11 +229,11 @@ data "aws_iam_policy_document" "call_cases_event_bridge_scheduler_assume" {
 
 resource "aws_iam_role_policy" "xxx_schedule_trigger_event_bridge_scheduler" {
   name   = "${var.prefix}${var.project_name}-${var.env}-xxx-schedule-trigger-event-bridge-scheduler"
-  role   = aws_iam_role.call_cases_for_event_bridge_scheduler.name
-  policy = data.aws_iam_policy_document.call_cases_event_bridge_scheduler_for_lambda.json
+  role   = aws_iam_role.xxx_schedule_for_event_bridge_scheduler.name
+  policy = data.aws_iam_policy_document.xxx_schedule_event_bridge_scheduler_for_lambda.json
 }
 
-data "aws_iam_policy_document" "call_cases_event_bridge_scheduler_for_lambda" {
+data "aws_iam_policy_document" "xxx_schedule_event_bridge_scheduler_for_lambda" {
   statement {
     effect = "Allow"
 
