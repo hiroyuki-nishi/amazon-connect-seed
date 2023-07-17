@@ -69,7 +69,7 @@ psql -h localhost -p 5434 -U <作成したデータベースのユーザー名: 
 
 踏み台EC2に接続
 ```
-aws ssm start-session --target i-0bdb9656ccc507137 --region ap-northeast-1 --profile prefix-xxx-sandbox
+aws ssm start-session --target i-xxx --region ap-northeast-1 --profile prefix-xxx-sandbox
 sudo -s
 ```
 
